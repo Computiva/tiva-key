@@ -1,0 +1,46 @@
+body {
+	margin: 10px;
+}
+
+button {
+	width: 100%;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 20px;
+	background-color: white;
+	cursor: pointer;
+}
+
+div.key {
+	margin-top: 10px;
+	width: 100%;
+}
+
+div.key a.remove_key {
+	border-left-style: solid;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: black;
+	border-width: 1px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding: 5px;
+	display: inline-block;
+	width: 20px;
+	cursor: pointer;
+}
+
+div.key a.key_name {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 5px;
+	display: inline-block;
+	width: calc(100% - 43px);
+	cursor: pointer;
+}
