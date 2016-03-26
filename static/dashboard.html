@@ -2,11 +2,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<script src="/key/new_key.js"></script>
+		<script type="text/javascript" src="/key/forge.min.js"></script>
+		<script type="text/javascript" src="/key/dashboard.js"></script>
 		<link rel="stylesheet" href="/key/dashboard.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	</head>
-	<body>
-		<button onclick="new_key()">New key</button>
+	<body onload="updateKeys()">
+		<p id="progress"></p>
+		<button onclick="newKey()"><i class="fa fa-plus fa-fw"></i> New key</button>
 		<div id="keys">
 		</div>
 	</body>
