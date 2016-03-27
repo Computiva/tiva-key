@@ -48,8 +48,15 @@ div.key a.key_name {
 	cursor: pointer;
 }
 
-div.key a.key_name i#key_status {
+div.key a.key_name i.key_status {
 	float: right;
+}
+
+div.key a.key_name i.key_status.online {
+	color: green;
+}
+
+div.key a.key_name i.key_status.offline {
 	color: red;
 }
 

@@ -1,0 +1,17 @@
+#! /bin/bash
+
+[ -v CONTENT_LENGTH ] && read -N $CONTENT_LENGTH message_body
+
+echo 'HTTP/1.1 200 OK'
+echo 'Content-Type: text/plain'
+echo ''
+
+while IFS='=' read -d '&' name value
+do
+	if [[ $name = 'name' ]]
+	then
+		[ -f "/var/lib/tiva-key/$value" ] && exit 0
+		key_name="$value"
+	fi
+	[[ $name = 'key' ]] && [ -v key_name ] && /home/angelo/bin/urlencode -d "$value" > "/var/lib/tiva-key/$key_name"
+done <<< "$message_body&"

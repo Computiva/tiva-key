@@ -1,0 +1,10 @@
+#! /bin/bash
+
+echo 'HTTP/1.1 200 OK'
+echo 'Content-Type: text/plain'
+echo ''
+
+while IFS='=&' read name value
+do
+	[[ $name = 'name' ]] && [ -f "/var/lib/tiva-key/$value" ] && head --bytes -1 "/var/lib/tiva-key/$value"
+done <<< "$QUERY_STRING"
