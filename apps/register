@@ -13,5 +13,5 @@ do
 		[ -f "/var/lib/tiva-key/$value" ] && exit 0
 		key_name="$value"
 	fi
-	[[ $name = 'key' ]] && [ -v key_name ] && /home/angelo/bin/urlencode -d "$value" > "/var/lib/tiva-key/$key_name"
+	[[ $name = 'key' ]] && [ -v key_name ] && urlencode -d "$value" > "/var/lib/tiva-key/$key_name"
 done <<< "$message_body&"
